@@ -1,0 +1,52 @@
+ext {
+
+    projectConfig = [
+            compileSdkVersion: 23,
+            buildToolsVersion: "24.0.0 rc3",
+
+            applicationId    : "com.zou.gank",
+            minSdkVersion    : 17,
+            targetSdkVersion : 23,
+            versionCode      : 1,
+            versionName      : "1.0",
+    ]
+
+    libVersion = [
+            supportLib      : "23.3.0",
+            junit           : "4.12",
+            rxAndroid       : "1.1.0",
+            butterknife     : "7.0.1",
+            adapterRxJava   : "2.0.1",
+            retrofit        : "2.0.1",
+            converterScalars: "2.0.1",
+            rxJava          : "1.1.2",
+            converterGson   : "2.0.2",
+            logger          : "1.11",
+            gson            : "2.6.2",
+    ]
+
+    dependencies = [
+            appcompatV7     : "com.android.support:appcompat-v7:${libVersion.supportLib}",
+            design          : "com.android.support:design:${libVersion.supportLib}",
+            cardViewV7      : "com.android.support:cardview-v7:${libVersion.supportLib}",
+
+
+            rxJava          : "io.reactivex:rxjava:${libVersion.rxJava}",
+            rxAndroid       : "io.reactivex:rxandroid:${libVersion.rxAndroid}",
+
+            butterKnife     : "com.jakewharton:butterknife:${libVersion.butterknife}",
+
+            retrofit        : "com.squareup.retrofit2:retrofit:${libVersion.retrofit}",
+            adapterRxJava   : "com.squareup.retrofit2:adapter-rxjava:${libVersion.adapterRxJava}",
+            converterScalars: "com.squareup.retrofit2:converter-scalars:${libVersion.converterScalars}",
+            converterGson   : "com.squareup.retrofit2:converter-gson:${libVersion.converterGson}",
+
+            logger          : "com.orhanobut:logger:${libVersion.logger}",
+
+            gson            : "com.google.code.gson:gson:${libVersion.gson}",
+    ]
+
+    testDependencies = [
+            junit: "junit:junit:${libVersion.junit}",
+    ]
+}

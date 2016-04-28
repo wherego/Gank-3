@@ -1,0 +1,54 @@
+apply plugin: 'com.android.application'
+
+def config = rootProject.ext.projectConfig
+def lib = rootProject.ext.dependencies
+def testLib = rootProject.ext.testDependencies
+
+android {
+    compileSdkVersion config.compileSdkVersion
+    buildToolsVersion config.buildToolsVersion
+
+    defaultConfig {
+        applicationId config.applicationId
+        minSdkVersion config.minSdkVersion
+        targetSdkVersion config.targetSdkVersion
+        versionCode config.versionCode
+        versionName config.versionName
+        jackOptions {
+            enabled true
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile testLib.junit
+
+    compile lib.appcompatV7
+    compile lib.design
+    compile lib.cardViewV7
+
+    compile lib.rxJava
+    compile lib.rxAndroid
+
+    compile lib.butterKnife
+
+    compile lib.retrofit
+    compile lib.adapterRxJava
+    compile lib.converterScalars
+    compile lib.converterGson
+
+    compile lib.logger
+
+    compile lib.gson
+}
