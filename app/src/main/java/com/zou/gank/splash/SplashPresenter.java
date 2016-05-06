@@ -1,7 +1,5 @@
 package com.zou.gank.splash;
 
-import android.content.Context;
-
 import java.util.concurrent.TimeUnit;
 
 import rx.Observable;
@@ -13,17 +11,15 @@ import rx.schedulers.Schedulers;
  */
 public class SplashPresenter implements SplashContact.Presenter {
 
-    private final Context mContext;
     private final SplashContact.View mView;
 
-    public SplashPresenter(Context context, SplashContact.View view) {
-        mContext = context;
+    public SplashPresenter(SplashContact.View view) {
         mView = view;
     }
 
     @Override
     public void delayEnterMain() {
-        Observable.timer(5,TimeUnit.SECONDS)
+        Observable.timer(3, TimeUnit.SECONDS)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(aLong -> {

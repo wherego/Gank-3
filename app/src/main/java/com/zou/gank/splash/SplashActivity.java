@@ -23,7 +23,7 @@ public class SplashActivity extends BaseActivity<SplashContact.Presenter> implem
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
         ButterKnife.bind(this);
-        mPresenter = new SplashPresenter(this,this);
+        mPresenter = new SplashPresenter(this);
         init();
     }
 

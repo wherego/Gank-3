@@ -1,4 +1,6 @@
 apply plugin: 'com.android.application'
+apply plugin: 'me.tatarka.retrolambda'
+
 
 def config = rootProject.ext.projectConfig
 def lib = rootProject.ext.dependencies
@@ -14,9 +16,7 @@ android {
         targetSdkVersion config.targetSdkVersion
         versionCode config.versionCode
         versionName config.versionName
-        jackOptions {
-            enabled true
-        }
+
     }
     buildTypes {
         release {
